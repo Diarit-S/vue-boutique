@@ -1,7 +1,11 @@
 <template>
     <div class="d-flex flex-row">
+      <transition name="left" appear>
         <shop class="w-75"></shop>
+      </transition>
+      <transition name="right" appear>
         <cart class="w-25"></cart>
+      </transition>
     </div>
 </template>
 
@@ -19,5 +23,28 @@ import Cart from './Cart/Cart.vue'
 
 </script>
 
-<style>
+<style scoped>
+
+
+@keyframes fromleft {
+  from {
+    transform: translateX(-20px);
+  }
+}
+@keyframes fromright {
+  from {
+    transform: translateX(20px);
+  }
+}
+
+.left-enter-active {
+  animation: fromleft 1s;
+}
+
+
+.right-enter-active {
+  animation: fromright 1s;
+}
+
+
 </style>
