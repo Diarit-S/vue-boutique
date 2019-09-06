@@ -49,6 +49,7 @@ import { eventBus } from '../../../main';
         if (this.formIsValid()) {
           eventBus.addProduct({...this.form});
           this.resetForm(); 
+          this.$router.push('/shop');
         }
       },
       formIsValid(){
