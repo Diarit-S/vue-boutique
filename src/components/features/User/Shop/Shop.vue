@@ -8,20 +8,10 @@
 
   export default {
     name : 'Shop',
+    props: ['products'],
     components : {
       ShopProductsList,
     },
-    data(){
-      return {
-        products : []
-      }
-    },
-    created(){
-      this.products = eventBus.products;
-      eventBus.$on('update:products', (products)=>{
-        this.products = products;
-      })
-    }
   }
 
 </script>
